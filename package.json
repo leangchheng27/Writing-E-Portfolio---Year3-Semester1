@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "postbuild": "cp public/_redirects build/client/_redirects",
     "dev": "node ./scripts/dev.cjs && remix vite:dev",
     "start": "wrangler pages dev ./build/client",
     "postinstall": "node ./scripts/draco.cjs",
