@@ -151,7 +151,7 @@ export const Navbar = () => {
         onClick={handleMobileNavClick}
       >
         <img
-          src="/app/assets/IFL.png"
+          src="/IFL.png"
           alt="Logo"
           style={{ width: 50, height: 50, borderRadius: '50%' }}
         />
