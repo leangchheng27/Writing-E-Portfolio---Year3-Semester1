@@ -28,11 +28,13 @@ export function ProjectSummary({
   model,
   buttonText,
   buttonLink,
+  buttons,
   alternate,
   ...rest
 }) {
   const [focused, setFocused] = useState(false);
   const [modelLoaded, setModelLoaded] = useState(false);
+  const [videoVisible, setVideoVisible] = useState(false);
   const { theme } = useTheme();
   const { width } = useWindowSize();
   const isHydrated = useHydrated();
@@ -90,7 +92,21 @@ export function ProjectSummary({
           {description}
         </Text>
         <div className={styles.button} data-visible={visible}>
-          {buttonLink && buttonLink.endsWith('.pdf') ? (
+          {buttons ? (
+            <div className={styles.buttonGroup}>
+              {buttons.map((btn, idx) => (
+                <a
+                  key={idx}
+                  href={btn.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.buttonAnchor}
+                >
+                  {btn.text}
+                </a>
+              ))}
+            </div>
+          ) : buttonLink && buttonLink.endsWith('.pdf') ? (
             <a
               href={buttonLink}
               target="_blank"
@@ -99,6 +115,27 @@ export function ProjectSummary({
             >
               {buttonText}
             </a>
+          ) : buttonLink && (buttonLink.endsWith('.mov') || buttonLink.endsWith('.mp4')) ? (
+            <>
+              <Button
+                iconHoverShift
+                onClick={() => setVideoVisible(!videoVisible)}
+                iconEnd="arrow-right"
+              >
+                {buttonText}
+              </Button>
+              {videoVisible && (
+                <video
+                  controls
+                  autoPlay
+                  style={{ width: '100%', maxWidth: '600px', marginTop: '1rem' }}
+                >
+                  <source src={buttonLink} type="video/mp4" />
+                  <source src={buttonLink} type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+            </>
           ) : (
             <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
               {buttonText}
