@@ -41,12 +41,15 @@ export const Home = () => {
   const projectTwo = useRef();
   const projectThree = useRef();
   const projectFour = useRef();
+  const readingLog = useRef();
+  const verbalReport = useRef();
+  const writtenReflection = useRef();
   const [visibleSections, setVisibleSections] = useState([projectOne]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
 
   useEffect(() => {
     // Only include refs that are actually rendered
-    const sections = [intro, projectOne, projectTwo, projectThree, projectFour];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, readingLog, verbalReport, writtenReflection];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -97,8 +100,10 @@ export const Home = () => {
         index={1}
         title="Phorn Leangchheng - Writing Assignment1 - E3.5"
         description="Click the button below to view my writing assignment PDF."
-        buttonText="View PDF"
-        buttonLink="/Phorn%20Leangchheng%20-%20Writing%20Assignment1%20-%20E3.5.pdf"
+        buttons={[
+          { text: 'View First Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment1%20-%20First%20draft%20-%20E3.5.pdf' },
+          { text: 'View Final Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment1%20-%20SecondDraft%20-%20E3.5.pdf' },
+        ]}
         model={{
           type: 'laptop',
           alt: 'Portfolio PDF preview',
@@ -117,8 +122,10 @@ export const Home = () => {
         index={2}
         title="Phorn Leangchheng - Writing Assignment2 - E3.5"
         description="Click the button below to view my writing assignment PDF."
-        buttonText="View PDF"
-        buttonLink="/Phorn%20Leangchheng%20-%20Writing%20Assignment%202%20-%20E3.5.pdf"
+        buttons={[
+          { text: 'View First Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%202%20-%20First%20Draft%20-%20E3.5.pdf' },
+          { text: 'View Final Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%202%20-%20Second%20Draft%20-%20E3.5.pdf' },
+        ]}
         model={{
           type: 'laptop',
           alt: 'Portfolio PDF preview',
@@ -137,8 +144,10 @@ export const Home = () => {
         index={3}
         title="Phorn Leangchheng - Writing Assignment3 - E3.5"
         description="Click the button below to view my writing assignment PDF."
-        buttonText="View PDF"
-        buttonLink="/Phorn%20Leangchheng%20-%20Writing%20Assignment%203%20-%20E3.5.pdf"
+        buttons={[
+          { text: 'View First Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%203%20-%20First%20Draft%20-%20E3.5.pdf' },
+          { text: 'View Final Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%203%20-%20Second%20Draft%20-%20E3.5.pdf' },
+        ]}
         model={{
           type: 'laptop',
           alt: 'Portfolio PDF preview',
@@ -157,8 +166,70 @@ export const Home = () => {
         index={4}
         title="Phorn Leangchheng - Writing Assignment4 - E3.5"
         description="Click the button below to view my writing assignment PDF."
-        buttonText="View PDF"
-        buttonLink="/Phorn%20Leangchheng%20-%20Writing%20Assignment%204%20-%20E3.5.pdf"
+        buttons={[
+          { text: 'View First Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%204%20-%20First%20Draft%20-%20E3.5.pdf' },
+          { text: 'View Final Draft', link: '/Phorn%20Leangchheng%20-%20Writing%20Assignment%204%20-%20Second%20Draft%20-%20E3.5.pdf' },
+        ]}
+        model={{
+          type: 'laptop',
+          alt: 'Portfolio PDF preview',
+          textures: [
+            {
+              srcSet: `${insideLaptop}`,
+              placeholder: insideLaptop,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={readingLog}
+        visible={true}
+        index="★"
+        title="Reading Log"
+        description="Click the button below to view my reading log."
+        buttonText="View Log"
+        buttonLink="/%20Phorn%20Leangchheng%20-%20READING%20LOG%20-%20E3.5.pdf"
+        model={{
+          type: 'laptop',
+          alt: 'Portfolio PDF preview',
+          textures: [
+            {
+              srcSet: `${insideLaptop}`,
+              placeholder: insideLaptop,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-6"
+        sectionRef={verbalReport}
+        visible={true}
+        index="★"
+        title="Reading Verbal Report Video"
+        description="Click the button below to view my reading verbal report video."
+        buttonText="View Video"
+        buttonLink="https://drive.google.com/uc?export=download&id=1Rn4GDozCsKL0996Jkln23W_fLDXij2nO"
+        model={{
+          type: 'laptop',
+          alt: 'Portfolio PDF preview',
+          textures: [
+            {
+              srcSet: `${insideLaptop}`,
+              placeholder: insideLaptop,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-7"
+        sectionRef={writtenReflection}
+        visible={true}
+        index="★"
+        title="Written Reflection"
+        description="Click the button below to view my written reflection."
+        buttonText="View Reflection"
+        buttonLink="/Phorn%20Leangchheng%20-%20Written%20Reflection%20-%20E3.5.pdf"
         model={{
           type: 'laptop',
           alt: 'Portfolio PDF preview',
