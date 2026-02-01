@@ -209,7 +209,7 @@ export const Home = () => {
         title="Reading Verbal Report Video"
         description="Click the button below to view my reading verbal report video."
         buttonText="View Video"
-        buttonLink="https://drive.google.com/uc?export=download&id=1Rn4GDozCsKL0996Jkln23W_fLDXij2nO"
+        buttonLink="https://drive.google.com/file/d/1Rn4GDozCsKL0996Jkln23W_fLDXij2nO/preview"
         model={{
           type: 'laptop',
           alt: 'Portfolio PDF preview',
