@@ -2,20 +2,20 @@ import config from '~/config.json';
 
 export const navLinks = [
   {
-    label: 'Writing 1',
+    label: 'Written Work',
     pathname: '/#project-1',
   },
   {
-    label: 'Writing 2',
-    pathname: '/#project-2',
+    label: 'Reading Log',
+    pathname: '/#project-5',
   },
   {
-    label: 'Writing 3',
-    pathname: '/#project-3',
+    label: 'Reading Report Video',
+    pathname: '/#project-6',
   },
   {
-    label: 'Writing 4',
-    pathname: '/#project-4',
+    label: 'Written Reflection',
+    pathname: '/#project-7',
   },
 ];
 
